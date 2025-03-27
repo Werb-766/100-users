@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Foydalanuvchilar Boshqaruvi</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+  <div id="loader" class="loader">
+    <div class="spinner"></div>
+  </div>
+
+  <!-- Header -->
+  <header>
+    <div class="logo">
+      <i class="fas fa-users"></i>
+      <span>Foydalanuvchilar Boshqaruvi</span>
+    </div>
+    <div class="search-bar">
+      <input type="text" id="searchInput" placeholder="Qidirish...">
+      <select id="searchType">
+        <option value="name">Ism</option>
+        <option value="location">Manzil</option>
+        <option value="email">Email</option>
+      </select>
+    </div>
+    <div class="filters">
+      <select id="sortSelect">
+        <option value="name">Ism bo'yicha</option>
+        <option value="age">Yosh bo'yicha</option>
+        <option value="location">Manzil bo'yicha</option>
+      </select>
+      <select id="filterGender">
+        <option value="all">Barcha jinsi</option>
+        <option value="male">Erkak</option>
+        <option value="female">Ayol</option>
+      </select>
+      <select id="ageRange">
+        <option value="all">Barcha yosh</option>
+        <option value="18-30">18-30</option>
+        <option value="31-50">31-50</option>
+        <option value="51+">51+</option>
+      </select>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main>
+    <div class="stats-container">
+      <div class="stat-card">
+        <i class="fas fa-users"></i>
+        <span id="totalUsers">0</span>
+        <p>Jami foydalanuvchilar</p>
+      </div>
+      <div class="stat-card">
+        <i class="fas fa-male"></i>
+        <span id="maleCount">0</span>
+        <p>Erkaklar</p>
+      </div>
+      <div class="stat-card">
+        <i class="fas fa-female"></i>
+        <span id="femaleCount">0</span>
+        <p>Ayollar</p>
+      </div>
+      <div class="stat-card">
+        <i class="fas fa-globe"></i>
+        <span id="countriesCount">0</span>
+        <p>Davlatlar</p>
+      </div>
+    </div>
+
+    <div class="view-controls">
+      <button id="gridView" class="active"><i class="fas fa-th"></i> Grid</button>
+      <button id="listView"><i class="fas fa-list"></i> List</button>
+    </div>
+
+    <div id="userList" class="user-list grid-view"></div>
+
+    <div id="pagination" class="pagination">
+      <button id="prevPage"><i class="fas fa-chevron-left"></i></button>
+      <span id="currentPage">1</span> / <span id="totalPages">1</span>
+      <button id="nextPage"><i class="fas fa-chevron-right"></i></button>
+    </div>
+  </main>
+
+  <!-- User Details Modal -->
+  <div id="userModal" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <div id="userDetails"></div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
